@@ -1,0 +1,92 @@
+﻿@model SimpleCRUD.Models.ModificarClienteVM
+
+@Html.ActionLink("Volver al Menu Principal","Index")
+<br /><br />
+
+      <div style="text-align:center">
+
+          <h1>Modificando a @Model.Nombre&nbsp;@Model.Apellido</h1>
+
+          @using (Html.BeginForm())
+          {
+              <table border="0" style="margin: 0 auto;">
+                  <tr>
+                      <td>
+                          @Html.LabelFor(m => m.Nombre)<span>: </span>
+                      </td>
+                      <td>
+                          @Html.EditorFor(m => m.Nombre)
+                      </td>
+                      <td>
+                          @Html.ValidationMessageFor(m => m.Nombre)
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          @Html.LabelFor(m => m.Apellido)<span>: </span>
+                      </td>
+                      <td>
+                          @Html.EditorFor(m => m.Apellido)
+                      </td>
+                      <td>
+                          @Html.ValidationMessageFor(m => m.Apellido)
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          @Html.LabelFor(m => m.Dni)<span>: </span>
+                      </td>
+                      <td>
+                          @Html.EditorFor(m => m.Dni)
+                      </td>
+                      <td>
+                          @Html.ValidationMessageFor(m => m.Dni)
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          @Html.LabelFor(m => m.Celular)<span>: </span>
+                      </td>
+                      <td>
+                          @Html.EditorFor(m => m.Celular)
+                      </td>
+                      <td>
+                          @Html.ValidationMessageFor(m => m.Celular)
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          @Html.LabelFor(m => m.Domicilio)<span>: </span>
+                      </td>
+                      <td>
+                          @Html.EditorFor(m => m.Domicilio)
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          @Html.LabelFor(m => m.Email)<span>: </span>
+                      </td>
+                      <td>
+                          @Html.EditorFor(m => m.Email)
+                      </td>
+                  </tr>
+              </table>
+              <br /><br />
+
+              <input name="GuardarBtn"
+                     type="submit"
+                     value="Guardar Cambios" />
+
+              <span>&nbsp;&nbsp;</span>
+
+              <input name="RecargarBtn"
+                     type="submit"
+                     value="Recargar Datos" />
+
+              <br />
+              
+          }
+      </div>
+
+
+

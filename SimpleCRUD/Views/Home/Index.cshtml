@@ -1,0 +1,65 @@
+﻿@model SimpleCRUD.Models.IndexVM
+
+<html>
+<body>
+
+    <div style="text-align:center">
+
+        <h1>Simple CRUD</h1>
+        <br />
+
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            @Html.LabelFor(m=>m.Buscar)<span>: </span>
+            @Html.EditorFor(m=>m.Buscar)
+
+            <input name="BuscarBtn"
+                   type="submit"
+                   value="Buscar" />
+
+            <br /><br />
+
+            <input name="AgregarBtn"
+                   type="submit"
+                   value="Agregar Nuevo Cliente" />
+            <br /><br />
+        }
+
+        @if (Model.clientes.Count == 0)
+         {
+            <span style="color:red">No existen Clientes Actualmente</span>
+         }
+        else
+        {
+            <table border="1" style="margin: 0 auto;">
+                <tr>
+                    <th>Nro Socio</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Dni</th>
+                    <th>Celular</th>
+                    <th>Domicilio</th>
+                    <th>Email</th>
+                </tr>
+                @foreach (var cliente in Model.clientes)
+                {
+                    <tr>
+                        <td>@cliente.NroSocio</td>
+                        <td>@cliente.Nombre</td>
+                        <td>@cliente.Apellido</td>
+                        <td>@cliente.Dni</td>
+                        <td>@cliente.Celular</td>
+                        <td>@cliente.Domicilio</td>
+                        <td>@cliente.Email</td>
+                        <td>@Html.ActionLink("Modificar", "Modificar", new { NroSocio = cliente.NroSocio })</td>
+                        <td>@Html.ActionLink("Eliminar", "Eliminar", new { NroSocio = cliente.NroSocio })</td>
+                    </tr>
+                }
+            </table>
+        }
+
+    </div>
+    
+
+</body>
+</html>

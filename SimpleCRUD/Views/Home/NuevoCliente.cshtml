@@ -1,0 +1,79 @@
+﻿@model SimpleCRUD.Models.NuevoClienteVM
+
+@Html.ActionLink("Volver al Menu Principal", "Index")
+
+<div style="text-align:center">
+
+    <h1>Nuevo Cliente</h1>
+    <br />
+
+    @using (Html.BeginForm("Agregar", "Home"))
+    {
+        <table border="0" style="margin: 0 auto;">        
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Nombre)<span>: </span>
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.Nombre)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.Nombre)
+                </td>      
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Apellido)<span>: </span>
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.Apellido)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.Apellido)
+                </td>      
+            </tr>        
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Dni)<span>: </span>
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.Dni)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.Dni)
+                </td>      
+            </tr>      
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Celular)<span>: </span>
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.Celular)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.Celular)
+                </td>      
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Domicilio)<span>: </span>
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.Domicilio)
+                </td>    
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Email)<span>: </span>
+                </td>
+                <td>
+                    @Html.EditorFor(m => m.Email)
+                </td>    
+            </tr>           
+        </table>
+        <br />
+        <input value="Agregar"
+               type="submit" />
+    }
+</div>
+
